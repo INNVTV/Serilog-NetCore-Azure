@@ -38,5 +38,13 @@ namespace Serilog_NetCore_Azure.Pages
             Debug.WriteLine("Info logged.");
             Console.WriteLine("Info logged.");
         }
+        public void OnPostCriticalText()
+        {
+            Message = "Critical logged to text";
+
+            Trace.WriteLine("Info logged.");
+            Debug.WriteLine("Info logged.");
+            Console.WriteLine("Info logged.");
+        }
     }
 }

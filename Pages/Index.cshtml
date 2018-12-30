@@ -4,18 +4,27 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
+<div class="text-left">
     <h3 class="display-4">Serilog Implementations</h1>
     <p>Learn about <a href="https://serilog.net/" target="_blank">Serilog</a>.</p>
     <hr>
-    @Model.Message
+    <p><strong>| </strong><span class="message">@Model.Message</span></p>
     <hr>
-    <button class="btn btn-primary">Log info to text file</button>
-    <button class="btn btn-danger">Log warning to text Application Insighs</button>
-    <button class="btn btn-warning">Log critial to text Application Insighs</button>
-
     <form method="POST">
+
+        <h3>Text Logs</h3>
+
+            <input type="submit" asp-page-handler="InfoText" value="Log info to text file" class="btn btn-primary"/>
+            <input type="submit" asp-page-handler="WarnText" value="Log warning to text file" class="btn btn-warning"/>
+            <input type="submit" asp-page-handler="CriticalText" value="Log critical to text file" class="btn btn-danger"/>
+
+        <hr>
+
+        <h3>Text Logs</h3>
+
         <input type="submit" asp-page-handler="InfoText" value="Log info to text file" class="btn btn-primary"/>
         <input type="submit" asp-page-handler="WarnText" value="Log warning to text file" class="btn btn-warning"/>
+        <input type="submit" asp-page-handler="CriticalText" value="Log critical to text file" class="btn btn-danger"/>
+
     </form>
 </div>
