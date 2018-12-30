@@ -1,0 +1,24 @@
+2018-12-29 23:32:57.453 -08:00 [INF] The global logger has been configured.
+2018-12-29 23:32:57.539 -08:00 [INF] Hello, Serilog!
+2018-12-29 23:33:02.720 -08:00 [FTL] Fatal!
+2018-12-29 23:35:02.915 -08:00 [INF] The global logger has been configured.
+2018-12-29 23:35:02.987 -08:00 [INF] Hello, Serilog!
+2018-12-29 23:36:17.095 -08:00 [INF] The global logger has been configured.
+2018-12-29 23:36:17.180 -08:00 [INF] Hello, Serilog!
+2018-12-29 23:36:22.376 -08:00 [INF] Information!
+2018-12-29 23:36:23.834 -08:00 [WRN] Warning!!
+2018-12-29 23:36:25.187 -08:00 [FTL] FATAL!!!!
+2018-12-29 23:36:26.926 -08:00 [WRN] Warning!!
+2018-12-29 23:36:28.035 -08:00 [INF] Information!
+2018-12-29 23:36:31.313 -08:00 [INF] Information!
+2018-12-29 23:36:31.561 -08:00 [INF] Information!
+2018-12-29 23:36:32.098 -08:00 [INF] Information!
+2018-12-29 23:36:32.494 -08:00 [WRN] Warning!!
+2018-12-29 23:36:32.876 -08:00 [FTL] FATAL!!!!
+2018-12-29 23:36:33.105 -08:00 [FTL] FATAL!!!!
+2018-12-29 23:36:33.260 -08:00 [FTL] FATAL!!!!
+2018-12-29 23:36:33.406 -08:00 [FTL] FATAL!!!!
+2018-12-29 23:36:55.249 -08:00 [INF] The global logger has been configured.
+2018-12-29 23:36:55.324 -08:00 [INF] Hello, Serilog!
+2018-12-29 23:46:09.260 -08:00 [INF] The global logger has been configured.
+2018-12-29 23:46:09.332 -08:00 [INF] Hello, Serilog!

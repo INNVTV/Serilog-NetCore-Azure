@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Serilog;
 
 namespace Serilog_NetCore_Azure
 {
@@ -17,6 +18,26 @@ namespace Serilog_NetCore_Azure
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+
+            //------------------------
+            // SETUP SERILOG
+            //------------------------
+
+            // Create a logger with configured sinks, enrichers, and minimum level
+            // Serilog's global, statically accessible logger, is set via Log.Logger and can be invoked using the static methods on the Log class.
+
+            Log.Logger = new LoggerConfiguration()
+            .WriteTo.Console() //<-- This will give us output to our Kestrel console
+            .WriteTo.File("_logs/log-.txt", rollingInterval: RollingInterval.Day) //<-- Write our logs to a local text file with rolling interval configuration
+            .CreateLogger();
+
+            Log.Information("The global logger has been configured.");
+            Log.Information("Hello, Serilog!");
+
+
+            //--------------------------
+            // SERILOG SETUP COMPLETE
+            //--------------------------
         }
 
         public IConfiguration Configuration { get; }
@@ -30,7 +51,6 @@ namespace Serilog_NetCore_Azure
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

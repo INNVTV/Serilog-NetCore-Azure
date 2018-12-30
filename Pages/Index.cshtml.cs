@@ -1,50 +1,45 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Diagnostics;
+using Serilog;
 
 namespace Serilog_NetCore_Azure.Pages
 {
     public class IndexModel : PageModel
     {
+
         public string Message = "Default";
 
         public void OnGet()
         {
-            Message = "Get started...";
-
-            Trace.WriteLine("Page gotten.");
-            Debug.WriteLine("Page gotten.");
-            Console.WriteLine("Page gotten.");
+            Message = "Start sending logs...";
+            Debug.WriteLine("Page loaded.");
         }
 
-        public void OnPostInfoText()
+        public void OnPostInformation()
         {
             Message = "Info logged to text";
 
-            Trace.WriteLine("Info logged.");
+            Log.Information("Information!");
             Debug.WriteLine("Info logged.");
-            Console.WriteLine("Info logged.");
         }
 
-        public void OnPostWarnText()
+        public void OnPostWarning()
         {
             Message = "Warn logged to text";
 
-            Trace.WriteLine("Info logged.");
-            Debug.WriteLine("Info logged.");
-            Console.WriteLine("Info logged.");
+            Log.Warning("Warning!!");
+            Debug.WriteLine("Warning logged.");
         }
-        public void OnPostCriticalText()
+        public void OnPostFatal()
         {
-            Message = "Critical logged to text";
+            Message = "Fatal logged to text";
 
-            Trace.WriteLine("Info logged.");
-            Debug.WriteLine("Info logged.");
-            Console.WriteLine("Info logged.");
+            Log.Fatal("FATAL!!!!");
+            Debug.WriteLine("Fatal logged.");
+
         }
     }
 }
