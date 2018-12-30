@@ -6,9 +6,16 @@
 
 <div class="text-center">
     <h3 class="display-4">Serilog Implementations</h1>
-    <p>Learn about <a href="https://serilog.net/">Serilog</a>.</p>
+    <p>Learn about <a href="https://serilog.net/" target="_blank">Serilog</a>.</p>
+    <hr>
+    @Model.Message
     <hr>
     <button class="btn btn-primary">Log info to text file</button>
     <button class="btn btn-danger">Log warning to text Application Insighs</button>
-    <button class="btn btn-critical">Log critial to text Application Insighs</button>
+    <button class="btn btn-warning">Log critial to text Application Insighs</button>
+
+    <form method="POST">
+        <input type="submit" asp-page-handler="InfoText" value="Log info to text file" class="btn btn-primary"/>
+        <input type="submit" asp-page-handler="WarnText" value="Log warning to text file" class="btn btn-warning"/>
+    </form>
 </div>
